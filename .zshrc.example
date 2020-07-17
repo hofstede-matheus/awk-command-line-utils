@@ -1,1 +1,8 @@
 
+upper() {
+    echo $1:u
+}
+
+lower() {
+    echo $1:l
+}
