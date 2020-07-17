@@ -3,7 +3,17 @@ upper() {
     s="$1"
     echo ${s^^}
 }
+
 lower() {
     s="$1"
     echo ${s,,}
 }
+
+cameltosnake() {
+    echo $1 | sed -r 's/([a-z0-9])([A-Z])/\1_\L\2/g'
+}
+
+snaketocamel() {
+    echo $1 | sed -r 's/_([a-z])/\U\1/gi' | sed -r 's/^([A-Z])/\l\1/'
+}
+
